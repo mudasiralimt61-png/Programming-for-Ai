@@ -1,0 +1,832 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Programming Fundamentals: Lab Tasks 1 to 5\n",
+    "\n",
+    "**Name:** Your Name Here  \n",
+    "**Roll Number:** Your Roll Number Here  \n",
+    "**Course:** Programming Fundamentals (Semester 2)\n",
+    "\n",
+    "**Contents**\n",
+    "1. Lab 1: Student Information Program (Input, Variables and Arithmetic)\n",
+    "2. Lab 2: Final Lab Challenge: Student Performance Analyzer\n",
+    "3. Lab 3: Loops: Student Records with Sentinel\n",
+    "4. Lab 4: Functions: Student Performance Analyzer\n",
+    "5. Lab 5: Student Performance Functions"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "# Lab 1: Student Information Program (Input, Variables and Arithmetic)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Example 1: Variables and Arithmetic\n",
+    "Store values in variables, then calculate the total and average of three marks."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "execution_count": null,
+   "outputs": [],
+   "source": [
+    "# Example 1: using variables with fixed values\n",
+    "\n",
+    "# Store three marks in variables\n",
+    "programming = 80\n",
+    "mathematics = 75\n",
+    "ai = 90\n",
+    "\n",
+    "# Add the marks to get the total\n",
+    "total = programming + mathematics + ai\n",
+    "\n",
+    "# Divide the total by 3 to get the average\n",
+    "average = total / 3\n",
+    "\n",
+    "# Display the results (:.2f rounds to 2 decimal places)\n",
+    "print(\"Total Marks:\", total)\n",
+    "print(\"Average Marks:\", f\"{average:.2f}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Example 2: Taking Input from the User\n",
+    "`input()` always returns text (a string), so we convert it with `int()` before doing arithmetic."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "execution_count": null,
+   "outputs": [],
+   "source": [
+    "# Example 2: reading and converting input\n",
+    "\n",
+    "# input() returns a string, so wrap it with int() to get a number\n",
+    "age = int(input(\"Enter your age: \"))\n",
+    "\n",
+    "# Now we can do arithmetic on age\n",
+    "print(\"Next year you will be\", age + 1)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Student Tasks\n",
+    "**Task 1:** Ask for two numbers and display their sum, difference and product.  \n",
+    "**Task 2:** Ask for a student's name and age and print a greeting."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "execution_count": null,
+   "outputs": [],
+   "source": [
+    "# Student Task 1: arithmetic on two numbers\n",
+    "\n",
+    "# Read two numbers from the user and convert them to integers\n",
+    "num1 = int(input(\"Enter first number: \"))\n",
+    "num2 = int(input(\"Enter second number: \"))\n",
+    "\n",
+    "# Display the sum, difference and product\n",
+    "print(\"Sum:\", num1 + num2)\n",
+    "print(\"Difference:\", num1 - num2)\n",
+    "print(\"Product:\", num1 * num2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "execution_count": null,
+   "outputs": [],
+   "source": [
+    "# Student Task 2: greeting message\n",
+    "\n",
+    "# Read the name (text) and age (number)\n",
+    "name = input(\"Enter your name: \")\n",
+    "age = int(input(\"Enter your age: \"))\n",
+    "\n",
+    "# Display a greeting using both values\n",
+    "print(\"Hello\", name + \"! You are\", age, \"years old.\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Lab Exercise: Student Information\n",
+    "Ask for the student's name, age and marks in Programming, Mathematics and AI.  \n",
+    "Then calculate and display the total and average marks."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "execution_count": null,
+   "outputs": [],
+   "source": [
+    "# Lab Exercise: Student Information Program\n",
+    "\n",
+    "# Step 1: Take input from the user\n",
+    "name = input(\"Enter your name: \")                              # student name (text)\n",
+    "age = int(input(\"Enter your age: \"))                           # student age (integer)\n",
+    "programming = int(input(\"Enter Programming marks: \"))          # marks in Programming\n",
+    "mathematics = int(input(\"Enter Mathematics marks: \"))          # marks in Mathematics\n",
+    "ai = int(input(\"Enter AI marks: \"))                            # marks in AI\n",
+    "\n",
+    "# Step 2: Calculations\n",
+    "total = programming + mathematics + ai                         # total of the three subjects\n",
+    "average = total / 3                                            # average marks\n",
+    "\n",
+    "# Step 3: Display all the information\n",
+    "print()\n",
+    "print(\"----- Student Information -----\")\n",
+    "print(\"Name:\", name)\n",
+    "print(\"Age:\", age)\n",
+    "print(\"Programming Marks:\", programming)\n",
+    "print(\"Mathematics Marks:\", mathematics)\n",
+    "print(\"AI Marks:\", ai)\n",
+    "print(\"Total Marks:\", total)\n",
+    "print(\"Average Marks:\", f\"{average:.2f}\")                      # 2 decimal places"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Challenge Task\n",
+    "Enter the student name, age, number of courses and the marks in each course.  \n",
+    "Calculate and display: total marks, average marks, age after 5 years, and the average after adding 5 bonus marks to each subject."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "execution_count": null,
+   "outputs": [],
+   "source": [
+    "# Challenge Task\n",
+    "\n",
+    "# Step 1: Take input from the user\n",
+    "name = input(\"Enter Student Name: \")                           # student name\n",
+    "age = int(input(\"Enter Student Age: \"))                        # student age\n",
+    "courses = int(input(\"Enter Number of Courses: \"))              # how many courses\n",
+    "\n",
+    "# Step 2: Read the marks of every course using a loop\n",
+    "total = 0                                                      # running total of marks\n",
+    "for i in range(1, courses + 1):\n",
+    "    marks = int(input(f\"Enter Marks in Course {i}: \"))         # marks for course i\n",
+    "    total += marks                                             # add to the total\n",
+    "\n",
+    "# Step 3: Calculations\n",
+    "average = total / courses                                      # average marks\n",
+    "age_after_5 = age + 5                                          # age after 5 years\n",
+    "# Adding 5 to each subject raises the total by 5*courses, so the average rises by 5\n",
+    "bonus_average = (total + 5 * courses) / courses\n",
+    "\n",
+    "# Step 4: Display the results\n",
+    "print()\n",
+    "print(\"----- Challenge Result -----\")\n",
+    "print(\"Name:\", name)\n",
+    "print(\"Total Marks:\", total)\n",
+    "print(\"Average Marks:\", f\"{average:.2f}\")\n",
+    "print(\"Age after 5 years:\", age_after_5)\n",
+    "print(\"Average after 5 bonus marks in each subject:\", f\"{bonus_average:.2f}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "# Lab 2: Final Lab Challenge: Student Performance Analyzer"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Example: Grade Using if-elif-else\n",
+    "A short example showing how a decision is made from a number."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "execution_count": null,
+   "outputs": [],
+   "source": [
+    "# Example: pass/fail decision with if-else\n",
+    "\n",
+    "marks = 65                                  # a sample mark\n",
+    "\n",
+    "# Check the condition and print the matching message\n",
+    "if marks >= 50:\n",
+    "    print(\"Pass\")\n",
+    "else:\n",
+    "    print(\"Fail\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Student Task\n",
+    "Given a percentage, print its grade using this scale:\n",
+    "A = 80 or above, B = 70-79, C = 60-69, D = 50-59, F = below 50."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "execution_count": null,
+   "outputs": [],
+   "source": [
+    "# Student Task: grade from a percentage\n",
+    "\n",
+    "percentage = float(input(\"Enter percentage: \"))   # read the percentage\n",
+    "\n",
+    "# Check the highest grade first, then move down\n",
+    "if percentage >= 80:\n",
+    "    grade = \"A\"\n",
+    "elif percentage >= 70:\n",
+    "    grade = \"B\"\n",
+    "elif percentage >= 60:\n",
+    "    grade = \"C\"\n",
+    "elif percentage >= 50:\n",
+    "    grade = \"D\"\n",
+    "else:\n",
+    "    grade = \"F\"\n",
+    "\n",
+    "print(\"Grade:\", grade)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Lab Exercise / Final Lab Challenge: Student Performance Analyzer\n",
+    "The program takes the student's name and marks in three subjects (each out of 100), then calculates total marks, percentage, grade and pass/fail status."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "execution_count": null,
+   "outputs": [],
+   "source": [
+    "# Final Lab Challenge: Student Performance Analyzer\n",
+    "\n",
+    "# 1. Take the student's name\n",
+    "name = input(\"Enter student name: \")\n",
+    "\n",
+    "# 2. Take marks in three subjects (each out of 100)\n",
+    "marks1 = float(input(\"Enter marks in subject 1: \"))\n",
+    "marks2 = float(input(\"Enter marks in subject 2: \"))\n",
+    "marks3 = float(input(\"Enter marks in subject 3: \"))\n",
+    "\n",
+    "# 3. Calculate total marks\n",
+    "total = marks1 + marks2 + marks3\n",
+    "\n",
+    "# 4. Calculate percentage (total out of 300)\n",
+    "percentage = total / 300 * 100\n",
+    "\n",
+    "# 5. Determine grade using if-elif-else\n",
+    "if percentage >= 80:\n",
+    "    grade = \"A\"\n",
+    "elif percentage >= 70:\n",
+    "    grade = \"B\"\n",
+    "elif percentage >= 60:\n",
+    "    grade = \"C\"\n",
+    "elif percentage >= 50:\n",
+    "    grade = \"D\"\n",
+    "else:\n",
+    "    grade = \"F\"\n",
+    "\n",
+    "# 6. Determine pass/fail status (pass mark is 50%)\n",
+    "if percentage >= 50:\n",
+    "    status = \"Pass\"\n",
+    "else:\n",
+    "    status = \"Fail\"\n",
+    "\n",
+    "# Display the result\n",
+    "print()\n",
+    "print(\"----- Student Result -----\")\n",
+    "print(\"Name:\", name)\n",
+    "print(\"Total Marks:\", total, \"/ 300\")\n",
+    "print(\"Percentage:\", f\"{percentage:.2f}%\")\n",
+    "print(\"Grade:\", grade)\n",
+    "print(\"Status:\", status)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "# Lab 3: Loops: Student Records with Sentinel"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Example 1: while loop with a sentinel\n",
+    "A sentinel is a special value (here `-1`) that tells the loop to stop."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "execution_count": null,
+   "outputs": [],
+   "source": [
+    "# Example 1: while loop that stops at the sentinel -1\n",
+    "\n",
+    "number = int(input(\"Enter a number (-1 to stop): \"))   # first value\n",
+    "count = 0                                              # how many numbers were entered\n",
+    "\n",
+    "# Keep looping until the user enters the sentinel\n",
+    "while number != -1:\n",
+    "    count += 1                                         # augmented assignment: count = count + 1\n",
+    "    number = int(input(\"Enter a number (-1 to stop): \"))\n",
+    "\n",
+    "print(\"You entered\", count, \"numbers\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Example 2: for loop with range() and a nested loop"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "execution_count": null,
+   "outputs": [],
+   "source": [
+    "# Example 2: for loop with range() and a nested loop\n",
+    "\n",
+    "# 'i' is the target variable that takes the values 1, 2, 3\n",
+    "for i in range(1, 4):\n",
+    "    # inner (nested) loop runs fully for every value of i\n",
+    "    for j in range(1, 4):\n",
+    "        print(i * j, end=\"\\t\")     # print on the same line, separated by a tab\n",
+    "    print()                        # move to the next line after each row"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Student Tasks\n",
+    "**Task 1:** Use a `for` loop to print the numbers 1 to 10 and their sum (use `+=`).  \n",
+    "**Task 2:** Print the multiplication table of 5."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "execution_count": null,
+   "outputs": [],
+   "source": [
+    "# Student Task 1: sum of 1 to 10 using augmented assignment\n",
+    "\n",
+    "total = 0\n",
+    "for n in range(1, 11):     # n takes the values 1..10\n",
+    "    total += n             # add n to the running total\n",
+    "print(\"Sum of 1 to 10 =\", total)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "execution_count": null,
+   "outputs": [],
+   "source": [
+    "# Student Task 2: multiplication table of 5\n",
+    "\n",
+    "for i in range(1, 11):\n",
+    "    print(\"5 x\", i, \"=\", 5 * i)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Lab Exercise: Student Marks with Sentinel\n",
+    "Requirements covered: `while` loop with sentinel -1, `for` loop with `range()`, a target variable to iterate the subjects, augmented assignment for the total, each student's total and average, a nested-loop multiplication table (1 to 5) for each student, and the number of students and overall average at the end."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "execution_count": null,
+   "outputs": [],
+   "source": [
+    "# Lab Exercise: Student Records Program\n",
+    "\n",
+    "subjects = [\"Programming\", \"Mathematics\", \"Artificial Intelligence\"]   # the three subjects\n",
+    "\n",
+    "student_count = 0          # total number of students entered\n",
+    "grand_total = 0            # sum of marks of ALL students (for the overall average)\n",
+    "\n",
+    "# Ask for the first student; -1 is the sentinel that stops the loop\n",
+    "name = input(\"Enter student name (-1 to stop): \")\n",
+    "\n",
+    "# 1. while loop: keeps accepting students until the sentinel -1 is entered\n",
+    "while name != \"-1\":\n",
+    "    total = 0              # total marks of the current student (reset for each student)\n",
+    "\n",
+    "    # 2. for loop with range() reads the marks of the three subjects\n",
+    "    #    'i' is the target variable that moves through positions 0, 1, 2\n",
+    "    for i in range(3):\n",
+    "        subject = subjects[i]                                  # subject at position i\n",
+    "        marks = int(input(f\"Enter {subject} marks: \"))\n",
+    "        # keep asking until the marks are between 0 and 100\n",
+    "        while marks < 0 or marks > 100:\n",
+    "            print(\"Invalid marks! Enter a value between 0 and 100.\")\n",
+    "            marks = int(input(f\"Enter {subject} marks: \"))\n",
+    "        total += marks                                         # 4. augmented assignment\n",
+    "\n",
+    "    average = total / 3                                        # average of this student\n",
+    "\n",
+    "    # 5. Display this student's total and average\n",
+    "    print()\n",
+    "    print(\"----- Result for\", name, \"-----\")\n",
+    "    print(\"Total Marks:\", total)\n",
+    "    print(\"Average Marks:\", f\"{average:.2f}\")\n",
+    "\n",
+    "    # 6. Nested loop: multiplication table from 1 to 5\n",
+    "    print(\"Multiplication table (1 to 5) for\", name)\n",
+    "    for row in range(1, 6):              # outer loop: the rows\n",
+    "        for col in range(1, 6):          # inner loop: the columns\n",
+    "            print(row * col, end=\"\\t\")\n",
+    "        print()                          # new line after each row\n",
+    "    print()\n",
+    "\n",
+    "    # Update the counters for the final summary\n",
+    "    student_count += 1\n",
+    "    grand_total += total\n",
+    "\n",
+    "    # Ask for the next student (the loop ends if the answer is -1)\n",
+    "    name = input(\"Enter student name (-1 to stop): \")\n",
+    "\n",
+    "# 7. Final summary\n",
+    "print()\n",
+    "print(\"===== Final Summary =====\")\n",
+    "print(\"Total number of students:\", student_count)\n",
+    "if student_count > 0:\n",
+    "    # every student has 3 subjects, so total marks are divided by student_count * 3\n",
+    "    overall_average = grand_total / (student_count * 3)\n",
+    "    print(\"Overall average:\", f\"{overall_average:.2f}\")\n",
+    "else:\n",
+    "    print(\"No students were entered.\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "# Lab 4: Functions: Student Performance Analyzer"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Example 1: Function with Parameters and Return Value"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "execution_count": null,
+   "outputs": [],
+   "source": [
+    "# Example 1: a function with parameters and a return value\n",
+    "\n",
+    "def add(a, b):              # a and b are parameters\n",
+    "    result = a + b          # 'result' is a LOCAL variable (exists only inside the function)\n",
+    "    return result           # send the value back to the caller\n",
+    "\n",
+    "print(add(10, 20))          # 10 and 20 are arguments"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Example 2: Global Constant"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "execution_count": null,
+   "outputs": [],
+   "source": [
+    "# Example 2: a global constant is defined outside all functions\n",
+    "\n",
+    "PASS_MARKS = 50             # constant (written in capital letters by convention)\n",
+    "\n",
+    "def check(percentage):\n",
+    "    # functions can read the global constant\n",
+    "    if percentage >= PASS_MARKS:\n",
+    "        return \"Pass\"\n",
+    "    return \"Fail\"\n",
+    "\n",
+    "print(check(65))\n",
+    "print(check(40))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Student Tasks\n",
+    "**Task 1:** Write a function `square(n)` that returns the square of a number.  \n",
+    "**Task 2:** Write a function `is_even(n)` that returns True for even numbers."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "execution_count": null,
+   "outputs": [],
+   "source": [
+    "# Student Task 1 and 2\n",
+    "\n",
+    "def square(n):\n",
+    "    return n * n            # return the square of n\n",
+    "\n",
+    "def is_even(n):\n",
+    "    return n % 2 == 0       # True if the remainder after dividing by 2 is 0\n",
+    "\n",
+    "print(square(7))\n",
+    "print(is_even(10), is_even(7))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Lab Exercise: Student Performance Analyzer (with Functions)\n",
+    "The work is split into separate functions (7 functions), data is passed with parameters and arguments, `PASS_MARKS = 50` is a global constant used for Pass/Fail, and local variables are used inside functions.  \n",
+    "The **Challenge** function `highest_subject()` is included."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "execution_count": null,
+   "outputs": [],
+   "source": [
+    "# Lab Exercise + Challenge: Student Performance Analyzer\n",
+    "\n",
+    "# Global constant: the minimum percentage needed to pass\n",
+    "PASS_MARKS = 50\n",
+    "\n",
+    "# Total number of subjects and the maximum marks of each subject\n",
+    "SUBJECTS = [\"Subject 1\", \"Subject 2\", \"Subject 3\"]\n",
+    "MAX_MARKS = 100\n",
+    "\n",
+    "\n",
+    "def calculate_total(m1, m2, m3):\n",
+    "    # Add the three marks and return the total\n",
+    "    total = m1 + m2 + m3                     # local variable\n",
+    "    return total\n",
+    "\n",
+    "\n",
+    "def calculate_percentage(total, num_subjects, max_marks):\n",
+    "    # Percentage = total / (number of subjects * max marks) * 100\n",
+    "    maximum = num_subjects * max_marks       # local variable: highest possible total\n",
+    "    percentage = total / maximum * 100\n",
+    "    return percentage\n",
+    "\n",
+    "\n",
+    "def determine_grade(percentage):\n",
+    "    # Decide the grade using if-elif-else\n",
+    "    if percentage >= 80:\n",
+    "        return \"A\"\n",
+    "    elif percentage >= 70:\n",
+    "        return \"B\"\n",
+    "    elif percentage >= 60:\n",
+    "        return \"C\"\n",
+    "    elif percentage >= 50:\n",
+    "        return \"D\"\n",
+    "    else:\n",
+    "        return \"F\"\n",
+    "\n",
+    "\n",
+    "def determine_status(percentage):\n",
+    "    # Use the global constant PASS_MARKS to decide Pass or Fail\n",
+    "    if percentage >= PASS_MARKS:\n",
+    "        return \"Pass\"\n",
+    "    else:\n",
+    "        return \"Fail\"\n",
+    "\n",
+    "\n",
+    "def highest_subject(names, marks):\n",
+    "    # Challenge: find the subject with the highest marks\n",
+    "    best_index = 0                           # assume the first subject is the highest\n",
+    "    for i in range(1, len(marks)):\n",
+    "        if marks[i] > marks[best_index]:     # a higher mark was found\n",
+    "            best_index = i\n",
+    "    return names[best_index], marks[best_index]\n",
+    "\n",
+    "\n",
+    "def display_result(name, marks, total, percentage, grade, status):\n",
+    "    # Show the complete result (all values come in as arguments)\n",
+    "    best_name, best_marks = highest_subject(SUBJECTS, marks)\n",
+    "    print()\n",
+    "    print(\"----- Student Performance Report -----\")\n",
+    "    print(\"Name:\", name)\n",
+    "    for i in range(len(marks)):\n",
+    "        print(f\"{SUBJECTS[i]}: {marks[i]}\")\n",
+    "    print(\"Total Marks:\", total, \"/\", len(marks) * MAX_MARKS)\n",
+    "    print(\"Percentage:\", f\"{percentage:.2f}%\")\n",
+    "    print(\"Grade:\", grade)\n",
+    "    print(\"Status:\", status)\n",
+    "    print(\"Highest Scoring Subject:\", best_name, \"with\", best_marks, \"marks\")\n",
+    "\n",
+    "\n",
+    "def main():\n",
+    "    # 1. Ask for the student's name\n",
+    "    name = input(\"Enter student name: \")\n",
+    "\n",
+    "    # 2. Ask for marks in three subjects\n",
+    "    m1 = float(input(\"Enter marks in Subject 1: \"))\n",
+    "    m2 = float(input(\"Enter marks in Subject 2: \"))\n",
+    "    m3 = float(input(\"Enter marks in Subject 3: \"))\n",
+    "\n",
+    "    # 3-6. Call the functions, passing data between them as arguments\n",
+    "    total = calculate_total(m1, m2, m3)\n",
+    "    percentage = calculate_percentage(total, len(SUBJECTS), MAX_MARKS)\n",
+    "    grade = determine_grade(percentage)\n",
+    "    status = determine_status(percentage)\n",
+    "    display_result(name, [m1, m2, m3], total, percentage, grade, status)\n",
+    "\n",
+    "\n",
+    "# Start the program\n",
+    "main()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "# Lab 5: Student Performance Functions"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Example: Function that Returns Multiple Values\n",
+    "Python can return several values at once; the caller unpacks them into variables."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "execution_count": null,
+   "outputs": [],
+   "source": [
+    "# Example: returning two values from one function\n",
+    "\n",
+    "def min_max(a, b, c):\n",
+    "    smallest = min(a, b, c)      # smallest of the three numbers\n",
+    "    largest = max(a, b, c)       # largest of the three numbers\n",
+    "    return smallest, largest     # returns a tuple of two values\n",
+    "\n",
+    "low, high = min_max(4, 9, 2)     # unpack the two returned values\n",
+    "print(\"Smallest:\", low, \"Largest:\", high)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Student Task\n",
+    "Write a function `is_positive(n)` that returns True when `n` is greater than 0."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "execution_count": null,
+   "outputs": [],
+   "source": [
+    "# Student Task: simple Boolean function\n",
+    "\n",
+    "def is_positive(n):\n",
+    "    return n > 0                 # the comparison itself is True or False\n",
+    "\n",
+    "print(is_positive(5))\n",
+    "print(is_positive(-3))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Lab Activity: Student Performance Functions\n",
+    "Four functions (`calculate_average`, `is_passed`, `get_grade`, `student_report`) and a main program that calls them and shows a complete student report."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "execution_count": null,
+   "outputs": [],
+   "source": [
+    "# Lab Activity: Student Performance Functions\n",
+    "\n",
+    "# Function 1: accepts three marks and returns the average\n",
+    "def calculate_average(m1, m2, m3):\n",
+    "    return (m1 + m2 + m3) / 3\n",
+    "\n",
+    "\n",
+    "# Function 2: accepts an average, returns True if it is at least 50, otherwise False\n",
+    "def is_passed(average):\n",
+    "    return average >= 50\n",
+    "\n",
+    "\n",
+    "# Function 3: accepts an average and returns the grade letter\n",
+    "def get_grade(average):\n",
+    "    if average >= 80:\n",
+    "        return \"A\"          # 80 or above\n",
+    "    elif average >= 70:\n",
+    "        return \"B\"          # 70-79\n",
+    "    elif average >= 60:\n",
+    "        return \"C\"          # 60-69\n",
+    "    elif average >= 50:\n",
+    "        return \"D\"          # 50-59\n",
+    "    else:\n",
+    "        return \"F\"          # below 50\n",
+    "\n",
+    "\n",
+    "# Function 4: accepts the name and three marks, returns average, grade and pass/fail\n",
+    "def student_report(name, m1, m2, m3):\n",
+    "    average = calculate_average(m1, m2, m3)      # uses Function 1\n",
+    "    grade = get_grade(average)                   # uses Function 3\n",
+    "    passed = is_passed(average)                  # uses Function 2\n",
+    "    return average, grade, passed                # three return values\n",
+    "\n",
+    "\n",
+    "# ---------------- Main program ----------------\n",
+    "# Take input from the user\n",
+    "student_name = input(\"Enter student name: \")\n",
+    "mark1 = float(input(\"Enter marks in subject 1: \"))\n",
+    "mark2 = float(input(\"Enter marks in subject 2: \"))\n",
+    "mark3 = float(input(\"Enter marks in subject 3: \"))\n",
+    "\n",
+    "# Call student_report() and unpack the three returned values\n",
+    "avg, grade, passed = student_report(student_name, mark1, mark2, mark3)\n",
+    "\n",
+    "# Display the complete student report\n",
+    "print()\n",
+    "print(\"----- Student Report -----\")\n",
+    "print(\"Name:\", student_name)\n",
+    "print(\"Marks:\", mark1, mark2, mark3)\n",
+    "print(\"Average:\", f\"{avg:.2f}\")\n",
+    "print(\"Grade:\", grade)\n",
+    "print(\"Result:\", \"Pass\" if passed else \"Fail\")\n",
+    "print(\"Passed (Boolean):\", passed)"
+   ]
+  }
+ ],
+ "metadata": {
+  "colab": {
+   "provenance": []
+  },
+  "kernelspec": {
+   "name": "python3",
+   "display_name": "Python 3"
+  },
+  "language_info": {
+   "name": "python"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 0
+}
